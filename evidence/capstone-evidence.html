@@ -8,7 +8,7 @@
     <body>
         <header>
             <h1>GIT 337 Final Capstone Evidence</h1>
-            <p>Replace every bracketed prompt. Keep this concise and export it as one PDF for Canvas.</p>
+            <p> Final project documentation, accessibility testing, repairs, and verification results for the Telepathic Race capstone website.</p>
         </header>
         <main>
             <section>
@@ -71,20 +71,32 @@
 
                     <dt>Repository</dt>
                     <dd>
-                        URL pending GitHub repository setup.
+                        <a href="https://github.com/brianlove12/7_Capstone_Integration_Brian_Love">
+                            Telepathic Race Capstone Repository
+                        </a>
                     </dd>
 
                     <dt>Published site</dt>
                     <dd>
-                        URL pending publication of working draft.
+                        <a href="https://brianlove12.github.io/7_Capstone_Integration_Brian_Love/">
+                            Telepathic Race Capstone Website
+                        </a>
                     </dd>
 
                     <dt>Code defense</dt>
                     <dd>
-                        Code defense information will be added
-                        when the required format is confirmed.
+                        I completed an independent screen-recorded
+                        code defense demonstrating my Telepathic Race
+                        capstone website.
+
+                        <p>
+                            <a href="Capstone_Code_Defense.mov"
+                               target="_blank"
+                               rel="noopener">
+                                Watch my Capstone Code Defense
+                            </a>
+                        </p>
                     </dd>
-                </dl>
             </section>
             <section>
                 <h2>2. Concise Requirement Map</h2>
@@ -225,7 +237,16 @@
                         All four HTML pages and the shared
                         stylesheet passed validation.
                     </li>
-                    <li>Published links and assets: [result]</li>
+                    <li>
+                        Published links and assets:
+                        Tested the live GitHub Pages website.
+                        All six navigation links opened their
+                        intended destinations. CSS styling,
+                        images, responsive navigation, and the
+                        workshop registration form displayed
+                        correctly on the published website.
+                        Result: Pass.
+                    </li>
                     <li>
                         320 CSS pixels and 200% zoom:
                         The registration form passed responsive
@@ -239,46 +260,287 @@
                     </li>
                     <li>
                         Form labels, constraints, errors, and recovery:
-                        Required-field validation passed.
-                        The classroom prototype does not submit
-                        registration data or place it in the URL.
-                        Full error-recovery testing is pending.
+                        The registration form passed required-field
+                        validation, invalid email testing, keyboard
+                        navigation, and valid submission testing.
+
+                        Invalid entries were rejected, and the form
+                        displayed a demo confirmation after valid
+                        fictional information was entered.
+
+                        The classroom prototype does not submit or
+                        store registration data or expose it in the URL.
+
+                        Result: Pass.
                     </li>
-                    <li>Reduced motion and JavaScript unavailable: [result]</li>
-                    <li>Two current browsers: [result]</li>
+                    <li>
+                        Reduced motion and JavaScript unavailable:
+                        Tested the published website at 320 CSS
+                        pixels with JavaScript disabled. All six
+                        navigation links remained visible and
+                        usable. After restoring JavaScript, the
+                        responsive Menu button worked normally.
+
+                        Tested prefers-reduced-motion: reduce
+                        using Chrome DevTools. All content
+                        remained visible and usable, and
+                        existing motion was reduced appropriately.
+
+                        Result: Both tests passed.
+                    </li>
+                    <li>
+                    Two current browsers:
+                    Tested the published Telepathic Race website
+                    in Google Chrome and Apple Safari.
+
+                    Both browsers displayed the website correctly.
+                    All six navigation links worked, the responsive
+                    Menu button functioned, and keyboard focus
+                    remained visible.
+
+                    The workshop registration form displayed
+                    correctly, required-field validation worked,
+                    and submitting fictional information did not
+                    navigate away or expose values in the URL.
+
+                    Result: Pass in Chrome and Safari.
+                </li>
                 </ul>
             </section>
             <section>
                 <h2>4. Three Findings and Repairs</h2>
+
                 <table>
                     <thead>
                         <tr>
-                            <th>Finding and condition</th>
-                            <th>Impact</th>
-                            <th>Repair</th>
-                            <th>Exact retest and result</th>
+                            <th scope="col">Finding and condition</th>
+                            <th scope="col">Impact</th>
+                            <th scope="col">Repair</th>
+                            <th scope="col">Exact retest and result</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr>
-                            <td>[What happened and under which condition]</td>
-                            <td>[Affected content, task, or user]</td>
-                            <td>[What changed]</td>
-                            <td>[Repeated condition and observed result]</td>
+                            <td>
+                                <strong>1. Inconsistent Navigation Labels</strong>
+                                <p>
+                                    The Support page still displayed the old
+                                    navigation labels Workshops, Visit, and Events,
+                                    while the Home page displayed the updated
+                                    capstone navigation.
+                                </p>
+                            </td>
+                            <td>
+                                Inconsistent navigation labels could confuse
+                                visitors moving between pages and make it harder
+                                to locate the About and Virtual Meetings content.
+                            </td>
+                            <td>
+                                Updated the six navigation links in support.html
+                                to match the capstone navigation. Set
+                                aria-current="page" on Get Support.
+                            </td>
+                            <td>
+                                Opened Home, selected Get Support, and confirmed
+                                the Support page displayed all six updated links.
+                                The current-page indicator worked, and the Home
+                                link returned to the Home page.
+                                <strong>Result: Pass.</strong>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <strong>2. Invalid CSS Variable Function</strong>
+                                <p>
+                                    The workshop registration button used
+                                    vvar(--accent) instead of var(--accent).
+                                </p>
+                            </td>
+                            <td>
+                                The invalid CSS declaration prevented the
+                                intended border styling from applying.
+                            </td>
+                            <td>
+                                Corrected vvar(--accent) to var(--accent)
+                                in the shared stylesheet.
+                            </td>
+                            <td>
+                                Refreshed the Virtual Meetings page and
+                                confirmed the registration button displayed
+                                its intended gold border. Validated
+                                styles.css using the W3C CSS Validator.
+                                <strong>Result: Pass.</strong>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <p>Add two more rows.</p>
+
+                <p>
+                    <strong>3. Registration Confirmation Feedback:</strong>
+                    During testing, the workshop registration
+                    form did not display a confirmation after
+                    a valid submission attempt.
+
+                    This could leave visitors unsure whether
+                    their action was successful.
+
+                    I added a demo confirmation message with
+                    role="status" and JavaScript to reveal
+                    the message after valid form submission.
+
+                    Retest: Completed the required fields
+                    using fictional information and selected
+                    Submit workshop registration.
+
+                    The confirmation message appeared:
+                    "Demo completed successfully. This is an
+                    educational prototype. No registration
+                    was submitted or stored."
+
+                    Result: Pass.
+                </p>
             </section>
             <section>
                 <h2>5. Screenshots</h2>
-                <p>[Insert two or three labeled screenshots. Connect each screenshot to a requirement, test, or repair.]</p>
+                <figure>
+                    <img
+                        src="registration-confirmation.png"
+                        alt="Telepathic Race registration form showing the successful demo confirmation message."
+                    >
+                    <figcaption>
+                        Figure 1. Registration confirmation repair:
+                        After completing the required fields
+                        with fictional information, the form
+                        displays a demo-only confirmation.
+                        This verifies Finding 3.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="navigation-repair.png"
+                        alt="Telepathic Race Support page showing six consistent navigation links and the current-page indicator on Get Support."
+                    >
+                    <figcaption>
+                        Figure 2. Navigation consistency repair:
+                        The Support page displays all six updated
+                        navigation links, with Get Support marked
+                        as the current page. This verifies
+                        Finding 1.
+                    </figcaption>
+                </figure>
             </section>
             <section>
                 <h2>6. Sources, Assets, and AI</h2>
-                <p><strong>MDN/official sources:</strong> [Concise list with links]</p>
-                <p><strong>Assets and licenses:</strong> [Asset, creator, source, license/permission, and modification]</p>
-                <p><strong>AI disclosure:</strong> [State “No generative AI was used,” or document the tool, purpose, meaningful assistance, verification, and final decision.]</p>
+                <p>
+                    <strong>MDN/official sources:</strong>
+                    I consulted the following references while
+                    reviewing and testing the capstone:
+                </p>
+
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form">
+                            MDN: HTML form element
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event">
+                            MDN: Form submit event
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">
+                            MDN: prefers-reduced-motion
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://validator.w3.org/nu/">
+                            W3C Nu HTML Checker
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jigsaw.w3.org/css-validator/">
+                            W3C CSS Validation Service
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    <strong>Assets and licenses:</strong>
+                    The Telepathic Race website includes
+                    original project content and visual
+                    assets generated with ChatGPT.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Original content:</strong>
+                        Telepathic Race branding, written
+                        content, and project design decisions
+                        were developed or adapted by me.
+                    </li>
+                    <li>
+                        <strong>AI-generated images:</strong>
+                        Visual assets were generated using
+                        ChatGPT and selected or adapted by
+                        me for this educational website.
+                        No external stock-image license
+                        is claimed for these assets.
+                    </li>
+                    <li>
+                        <strong>Modifications:</strong>
+                        Images were incorporated into the
+                        website and adjusted as needed
+                        for layout and responsive display.
+                    </li>
+                </ul>
+                <p>
+                    <strong>AI disclosure:</strong>
+                    I used ChatGPT to generate visual assets,
+                    identify possible integration gaps,
+                    suggest debugging hypotheses, and
+                    review potential accessibility and
+                    usability issues.
+                </p>
+
+                <p>
+                    <strong>Meaningful assistance:</strong>
+                    ChatGPT suggested possible causes of
+                    inconsistent navigation and missing
+                    registration confirmation feedback.
+                    It also proposed HTML, CSS, and
+                    JavaScript changes for me to evaluate.
+                </p>
+
+                <p>
+                    <strong>My integration decisions:</strong>
+                    I reviewed the suggestions and decided
+                    which changes to implement. I updated
+                    the navigation labels and added a
+                    demo-only registration confirmation
+                    while keeping the form non-submitting.
+                </p>
+
+                <p>
+                    <strong>My observed tests:</strong>
+                    I personally tested the published
+                    website in Chrome and Safari.
+                    I checked responsive navigation,
+                    keyboard access, reduced motion,
+                    JavaScript-unavailable behavior,
+                    and form validation. I confirmed
+                    that the registration confirmation
+                    appeared after a valid test submission.
+                </p>
+
+                <p>
+                    <strong>Verification:</strong>
+                    I checked the HTML and CSS using
+                    W3C validation tools and recorded
+                    my own test results. I made the
+                    final integration decisions.
+                </p>
             </section>
         </main>
     </body>
