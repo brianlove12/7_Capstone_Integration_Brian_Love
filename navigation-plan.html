@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Navigation Plan and Evidence</title>
+
+        <style>
+            body {
+                max-width: 75rem;
+                margin: auto;
+                padding: 1rem;
+                font: 1rem/1.5 Arial, sans-serif;
+            }
+
+            h1,
+            h2 {
+                color: #8c1d40;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid #999;
+                padding: .55rem;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            th {
+                background: #8c1d40;
+                color: #fff;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Navigation Plan and Evidence</h1>
+
+        <p>
+            <strong>Student:</strong> Brian Love
+            &nbsp;
+            <strong>Site:</strong> Telepathic Race — Educational workshops and resources
+            exploring the Ten Spiritual Vibrations.
+        </p>
+
+        <h2>1. Priority tasks and content inventory</h2>
+
+       <ol>
+            <li>Learn about the Ten Spiritual Vibrations and available workshops.</li>
+            <li>Find information about visiting or attending a workshop.</li>
+            <li>Get support or contact the organization for assistance.</li>
+       </ol>
+
+        <table>
+            <tr>
+                <th>Destination</th>
+                <th>Final label</th>
+                <th>Order/group rationale</th>
+            </tr>
+            <tr>
+                <td>Home page</td>
+                <td>Home</td>
+                <td>
+                    Placed first because it provides the main starting point and overview
+                    of Telepathic Race.
+                </td>
+            </tr>
+            <tr>
+                <td>Ten Spiritual Vibrations section</td>
+                <td>Ten Vibrations</td>
+                <td>
+                    Placed near the beginning because learning about the Ten Spiritual
+                    Vibrations is a primary visitor task.
+                </td>
+            </tr>
+            <tr>
+                <td>Workshops section</td>
+                <td>Workshops</td>
+                <td>
+                    Follows Ten Vibrations so visitors can move from learning about the
+                    concept to exploring available workshops.
+                </td>
+            </tr>
+            <tr>
+                <td>Visit page</td>
+                <td>Visit</td>
+                <td>
+                    Provides practical information for visitors who want to attend a
+                    Telepathic Race workshop or event.
+                </td>
+            </tr>
+            <tr>
+                <td>Events section</td>
+                <td>Events</td>
+                <td>
+                    Gives visitors a direct destination for upcoming gatherings and
+                    learning opportunities.
+                </td>
+            </tr>
+            <tr>
+                <td>Support page</td>
+                <td>Get Support</td>
+                <td>
+                    Placed last as a clear action for visitors who need assistance,
+                    accessibility information, or answers to questions.
+                </td>
+            </tr>
+        </table>
+
+        <h2>2. Breakpoint evidence</h2>
+
+        <p>
+            <strong>Method and widths tested:</strong>
+            Started with the narrow vertical layout and tested the navigation at
+            320px. Then temporarily changed the navigation to a horizontal layout
+            in Chrome DevTools and slowly resized the viewport from about 1000px
+            downward to find where the content began to fail.
+        </p>
+
+        <p>
+            <strong>First content failure:</strong>
+            The horizontal navigation first became jumbled and crowded at about
+            590px.
+        </p>
+
+        <p>
+            <strong>Chosen breakpoint in relative units:</strong>
+            Chose 40em. At the browser's default 16px font size, 40em is about
+            640px, which gives the navigation additional space above the observed
+            failure point of about 590px.
+        </p>
+
+        <p>
+            <strong>Long-label and zoom retest:</strong>
+            Temporarily changed Visit to "Plan Your Telepathic Race Visit" and
+            Get Support to "Request Telepathic Race Support." The longer labels
+            reflowed without clipping or overlap, and I restored the original labels
+            after testing. I also tested the site at 200% browser zoom. All navigation
+            links remained available, the header reflowed, and the navigation remained
+            usable.
+        </p>
+
+        <h2>3. Interaction and failure test record</h2>
+
+        <table>
+            <tr>
+                <th>Condition</th>
+                <th>Expected</th>
+                <th>Observed</th>
+                <th>Result and repair</th>
+            </tr>
+            <tr>
+                <td>Keyboard: button, Tab, Escape, focus</td>
+                <td>
+                    The Menu button should work with Enter and Space. Tab should move
+                    through visible navigation links with a clear focus indicator.
+                    Escape should close an open menu and return focus to the Menu button.
+                    Hidden links should not receive focus.
+                </td>
+                <td>
+                    Enter and Space opened and closed the menu. Tab moved through the
+                    visible links and the gold focus outline remained visible. Escape
+                    closed the open menu and returned focus to the Menu button. Hidden
+                    navigation links did not receive focus.
+                </td>
+                <td>
+                    Pass. No repair was needed after the final keyboard test.
+                </td>
+            </tr>
+            <tr>
+                <td>Pointer/touch targets</td>
+                <td>
+                    The Menu button and navigation links should provide comfortable
+                    clickable targets with adequate padding and spacing. Hover, active,
+                    and focus states should be clearly visible.
+                </td>
+                <td>
+                    The Menu button and navigation links were easy to activate with the
+                    pointer. The links had comfortable padding and spacing, and the hover,
+                    active, and keyboard focus styles were visually distinct.
+                </td>
+                <td>
+                    Pass. The Menu button uses a minimum height of 2.75rem and the
+                    navigation links use .75rem of padding. No additional repair was
+                    needed.
+                </td>
+            </tr>
+            <tr>
+                <td>320px and breakpoint region</td>
+                <td>
+                    At 320px, the navigation should have no clipping, overlap, horizontal
+                    scrolling, missing links, or cut-off focus indicators. Around the
+                    breakpoint, the layout should change without becoming crowded or
+                    broken.
+                </td>
+                <td>
+                    At 320px, there was no clipping, overlap, or horizontal scrolling,
+                    and keyboard focus remained visible. During breakpoint testing, the
+                    horizontal navigation became jumbled at about 590px. With the final
+                    40em breakpoint, the navigation remained vertical below the breakpoint
+                    and changed cleanly to the horizontal layout above it.
+                </td>
+                <td>
+                    Pass. I used the observed failure around 590px to justify a 40em
+                    breakpoint, providing additional room before switching to the wide
+                    horizontal layout.
+                </td>
+            </tr>
+            <tr>
+                <td>200% zoom</td>
+                <td>
+                    At 200% browser zoom, every navigation link should remain available,
+                    text should remain readable, the header should reflow without overlap,
+                    and keyboard focus should remain visible.
+                </td>
+                <td>
+                    At 200% zoom, all six navigation links remained available. The header
+                    reflowed, the text remained readable, nothing important overlapped,
+                    and the keyboard focus indicator remained visible. The Menu button
+                    continued to open and close the navigation.
+                </td>
+                <td>
+                    Pass. No repair was needed after the 200% zoom test.
+                </td>
+            </tr>
+            <tr>
+                <td>JavaScript unavailable</td>
+                <td>
+                    With JavaScript unavailable, the Menu button should remain hidden
+                    and all six navigation links should remain visible, clickable, and
+                    usable.
+                </td>
+                <td>
+                    I temporarily disabled the navigation script and refreshed the page
+                    at a narrow width. The Menu button remained hidden, and all six
+                    navigation links remained visible and usable. The Telepathic Race
+                    brand link also continued to return to the Home page.
+                </td>
+                <td>
+                    Pass. The navigation uses progressive enhancement, so JavaScript is
+                    not required to access any of the primary navigation links. I restored
+                    the script after testing.
+                </td>
+            </tr>
+            <tr>
+                <td>CSS unavailable / wide recovery</td>
+                <td>
+                    Without CSS, the HTML should remain understandable and the links
+                    should remain usable in a logical order. For wide-layout recovery,
+                    closing the menu at a narrow width and then widening the viewport
+                    should make the full navigation visible regardless of the previous
+                    menu state.
+                </td>
+                <td>
+                    With the stylesheet temporarily disabled, the HTML remained
+                    understandable and the navigation links remained usable. After
+                    restoring the stylesheet, I closed the menu at a narrow width and
+                    widened the viewport. All six navigation links automatically
+                    reappeared in the wide horizontal layout, and the Menu button
+                    disappeared.
+                </td>
+                <td>
+                    Pass. The CSS-unavailable version remained usable. The wide-layout
+                    rule also overrides the closed narrow-menu state so the full
+                    navigation remains visible at wide widths. The stylesheet was
+                    restored after testing.
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <strong>Screenshot filenames and what each proves:</strong>
+            <code>narrow-menu-open.png</code> shows the responsive navigation at
+            320px with the Menu button activated and all six navigation destinations
+            visible. <code>keyboard-focus.png</code> shows the visible gold keyboard
+            focus indicator while navigating the responsive header with the keyboard.
+        </p>
+
+        <h3>Narrow Menu Open</h3>
+
+        <figure>
+            <img
+                src="narrow-menu-open.png"
+                alt="Telepathic Race responsive navigation at 320 pixels with the menu open."
+            >
+            <figcaption>
+                Narrow navigation with all six destinations visible.
+            </figcaption>
+        </figure>
+
+        <h3>Keyboard Focus</h3>
+
+        <figure>
+            <img
+                src="keyboard-focus.png"
+                alt="Telepathic Race navigation showing the visible gold keyboard focus indicator."
+            >
+            <figcaption>
+                Visible keyboard focus indicator during navigation testing.
+            </figcaption>
+        </figure>
+
+        <h2>4. Peer task test</h2>
+        <p>
+        <strong>Tester relationship (no name needed):</strong>
+            Sister
+        </p>
+
+        <p>
+            <strong>Two tasks attempted:</strong>
+            Task 1: Find information about the Ten Spiritual Vibrations.
+            Task 2: Go to the page where you can get support.
+        </p>
+
+        <p>
+            <strong>What the tester did or said:</strong>
+            For Task 1, the tester selected Ten Vibrations. For Task 2, the tester
+            selected Get Support. No confusion was observed during either task.
+        </p>
+
+        <p>
+            <strong>Change made or justified:</strong>
+            No change was necessary because the tester completed both navigation
+            tasks successfully without coaching or any observed confusion.
+        </p>
+
+        <h2>5. JavaScript code defense</h2>
+
+        <p>
+            Explain initialization, state synchronization, activation, and
+            Escape/focus behavior in your own words. Refer to the exact
+            variable, attribute, dataset value, function, and event used.
+        </p>
+
+        <p>
+            The <code>button</code> variable selects the element with the
+            <code>.menu-button</code> class, and the <code>list</code> variable
+            selects the navigation list with the <code>#primary-nav</code> ID.
+            The script adds the <code>js</code> class to the HTML element so the
+            CSS knows that JavaScript is available. It then reveals the Menu button
+            and initializes the navigation with <code>data-open="false"</code>.
+        </p>
+
+        <p>
+            The named <code>setMenuState()</code> function keeps the menu states
+            synchronized. It changes the button's <code>aria-expanded</code>
+            attribute and the navigation list's <code>data-open</code> value to
+            either true or false. The CSS uses the <code>data-open</code> value
+            to determine whether the navigation list is visible at narrow widths.
+        </p>
+
+        <p>
+            The click event checks the current value of
+            <code>aria-expanded</code> and passes the opposite value to
+            <code>setMenuState()</code>. Because the control is a native button,
+            the browser already provides mouse, Enter, and Space activation without
+            additional keyboard code.
+        </p>
+
+        <p>
+            The keydown event checks whether the Escape key was pressed while the
+            menu is open. If it was, <code>setMenuState(false)</code> closes the
+            menu and <code>button.focus()</code> returns keyboard focus to the
+            Menu button.
+        </p>
+
+        <h2>6. AI disclosure</h2>
+
+        <p>
+            <strong>Tool and purpose:</strong>
+            ChatGPT was used as a tool under the AI-assisted with disclosure permission for this
+            assignment. AI helped me critique navigation labels and it suggested minimal JavaScript.
+            I was able to propose a breakpoint and test the navigation. The final decisions were my own.
+        </p>
+
+        <p>
+            <strong>Prompt/task:</strong>
+            I used AI feedback on lables while making my own decisions about the Telepathic Race navigation, 
+            responsive layout, breakpoint, JavaScript behavior, and testing.
+        </p>
+
+        <p>
+            <strong>Accepted, changed, or rejected output:</strong>
+            I accepted minimal JavaScript suggestions for progressive enhancement, menu state synchronization, 
+            and focus return. I reviewed each accepted JavaScript line and can explain what it does and why it
+            is needed. I remained responsible for the final implementation and decisions.
+        </p>
+
+        <p>
+            <strong>How I verified it:</strong>
+            I provided my own test evidence by testing the navigation at 320px,
+            around the breakpoint, with longer labels, and at 200% zoom. I personally
+            tested pointer activation, Enter, Space, Tab, Escape, focus return,
+            JavaScript unavailable, CSS unavailable, and wide-layout recovery. I also
+            verified all three pages, captured the required screenshots, and conducted
+            the peer navigation test using my sister as a test subject.
+        </p>
+    </body>
+</html>

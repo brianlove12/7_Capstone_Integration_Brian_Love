@@ -1,0 +1,252 @@
+:root {
+    /* Existing navigation tokens */
+    --brand: burlywood;
+    --accent: #ffc627;
+    --ink: #191919;
+    --paper: #fff;
+    --space: 1rem;
+
+    /* Workshop registration tokens */
+    --font-body: "Source Sans 3", Arial, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+
+    --color-text: #404040;
+    --color-surface: #fff;
+    --color-action: #ffc627;
+    --color-accent: #ffc627;
+    --color-border: #747474;
+    --color-error: #b3261e;
+    --color-success: #2e7d32;
+    --color-muted: #5c6670;
+
+    --space-3: 1rem;
+    --radius: .5rem;
+    --measure: 68ch;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font: 1rem/1.5 Arial, sans-serif;
+}
+
+.skip-link {
+    position: absolute;
+    left: .5rem;
+    top: -6rem;
+    z-index: 20;
+    background: var(--paper);
+    color: var(--ink);
+    padding: .75rem;
+}
+
+.skip-link:focus {
+    top: .5rem;
+}
+
+.site-header {
+    background: burlywood;
+    color: var(--paper);
+    padding: var(--space);
+}
+
+.brand {
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.menu-button {
+    min-height: 2.75rem;
+    padding: .625rem 1rem;
+    border: .125rem solid var(--paper);
+    background: var(--accent);
+    color: var(--paper);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    list-style: none;
+    margin: .75rem 0 0;
+    padding: 0;
+}
+
+.nav-list a {
+    display: block;
+    color: var(--paper);
+    padding: .75rem;
+    text-decoration: none;
+}
+
+.nav-list a:hover,
+.menu-button:hover {
+    background: var(--paper);
+    color: var(--accent);
+}
+
+.nav-list a:focus-visible,
+.menu-button:focus-visible {
+    outline: .2rem solid var(--accent);
+    outline-offset: .2rem;
+}
+
+.nav-list a:active,
+.menu-button:active {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+.nav-list a[aria-current="page"] {
+    color: var(--ink);
+    background-color: var(--accent);
+    font-weight: 700;
+    text-decoration-thickness: .2rem;
+}
+
+.js .nav-list[data-open="false"] {
+    display: none;
+}
+
+main,
+footer {
+    width: min(100% - 2rem, var(--max));
+    margin-inline: auto;
+}
+
+main {
+    min-height: 55vh;
+    padding-block: 2rem;
+}
+
+@media (min-width: 40em) {
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .menu-button {
+    display: none;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .25rem;
+        margin-block-start: 0;
+    }
+
+    .js .nav-list[data-open="false"] {
+        display: flex;
+    }
+}
+/* Workshop registration form */
+
+#workshop-form {
+    display: grid;
+    gap: 1.5rem;
+    margin-block: 2rem;
+}
+
+#workshop-form fieldset,
+#workshop-form .field {
+    display: grid;
+    gap: .65rem;
+}
+
+#workshop-form fieldset {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #d0d0d0;
+    border-radius: var(--radius);
+}
+
+#workshop-form legend,
+#workshop-form label {
+    font-weight: 700;
+}
+
+#workshop-form legend {
+    padding-inline: .25rem;
+    font-family: var(--font-display);
+}
+
+#workshop-form .help {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+/* Workshop registration controls */
+
+#workshop-form input,
+#workshop-form select,
+#workshop-form textarea,
+#workshop-form button {
+    font: inherit;
+}
+
+#workshop-form input:not([type="radio"]):not([type="checkbox"]),
+#workshop-form select,
+#workshop-form textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: .75rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: .25rem;
+}
+
+#workshop-form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+#workshop-form .choice {
+    display: flex;
+    gap: .65rem;
+    align-items: flex-start;
+    padding: .5rem 0;
+}
+
+#workshop-form .choice input {
+    flex: 0 0 auto;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    margin-top: .2rem;
+}
+
+#workshop-form button {
+    justify-self: start;
+    min-height: 44px;
+    padding: .75rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    border: 2px solid vvar(--accent);
+    border-radius: .25rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#workshop-form button:hover:not(:disabled) {
+    filter: brightness(.9);
+}
+
+#workshop-form :focus-visible {
+    outline: .2rem solid var(--color-accent);
+    outline-offset: .2rem;
+}

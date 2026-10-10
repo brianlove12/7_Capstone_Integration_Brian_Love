@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Virtual Meetings | Telepathic Race</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="navigation.js" defer></script>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+
+        <header class="site-header">
+            <a class="brand" href="index.html">Telepathic Race</a>
+
+            <nav aria-label="Primary navigation">
+                <button
+                    class="menu-button"
+                    type="button"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    hidden
+                >
+                    Menu
+                </button>
+
+                <ul class="nav-list" id="primary-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="about.html#vibrations">Ten Vibrations</a>
+                    </li>
+                    <li>
+                        <a href="meetings.html" aria-current="page">
+                            Virtual Meetings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meetings.html#registration">Register</a>
+                    </li>
+                    <li>
+                        <a href="support.html">Get Support</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <h1>Telepathic Race Virtual Meetings</h1>
+
+            <p>
+                Connect with others interested in exploring
+                the Ten Spiritual Vibrations through virtual
+                meetings, discussions, and workshops.
+            </p>
+
+            <section id="workshops">
+                <h2>Explore Our Workshops</h2>
+
+                <p>
+                    Telepathic Race workshops introduce
+                    participants to concepts such as thought,
+                    love, revelation, leadership, and
+                    personal development.
+                </p>
+
+                <p>
+                    Virtual meetings provide opportunities
+                    to ask questions, exchange ideas,
+                    and explore the Ten Spiritual Vibrations
+                    in a welcoming environment.
+                </p>
+            </section>
+
+            <section id="registration">
+                <h2>Workshop Registration</h2>
+
+                <p>
+                    Interested in participating in a
+                    Telepathic Race virtual meeting?
+                    Use the registration form to provide
+                    your information and preferences.
+                </p>
+                 <p>
+                    This registration form is a classroom prototype.
+                    It does not submit or store registrations.
+                    Use fictional information only. Do not enter
+                    real personal or sensitive information.
+                </p>
+
+                <form id="workshop-form" onsubmit="return false;">
+                <fieldset>
+                    <legend>F3 · Contact Information</legend>
+
+                    <p class="help">
+                        Provide fictional contact information for this classroom
+                        prototype. Fields marked “required” must be completed.
+                    </p>
+
+                    <div class="field">
+                        <label for="full-name">
+                            Full name (required)
+                        </label>
+
+                        <input
+                            id="full-name"
+                            name="full_name"
+                            type="text"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="email">
+                            Email address (required)
+                        </label>
+
+                        <p class="help" id="email-help">
+                            Example: alex@example.com
+                        </p>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            required
+                            aria-describedby="email-help"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">
+                            Phone number (optional)
+                        </label>
+
+                        <p class="help" id="phone-help">
+                            Only used for time-sensitive workshop updates.
+                        </p>
+
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            autocomplete="tel"
+                            aria-describedby="phone-help"
+                        >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>F3 · Workshop Registration</legend>
+
+                    <p class="help">
+                        Choose a workshop session, attendance method, book
+                        familiarity level, and number of seats requested.
+                    </p>
+
+                    <div class="field">
+                        <label for="workshop-session">
+                            Workshop session/date (required)
+                        </label>
+
+                        <select
+                            id="workshop-session"
+                            name="workshop_session"
+                            required
+                        >
+                            <option value="">
+                                Select a workshop session
+                            </option>
+
+                            <option value="october-17-morning">
+                                October 17, 2026 · 10:00 AM
+                            </option>
+
+                            <option value="october-17-afternoon">
+                                October 17, 2026 · 2:00 PM
+                            </option>
+
+                            <option value="october-18-morning">
+                                October 18, 2026 · 10:00 AM
+                            </option>
+                        </select>
+                    </div>
+
+                    <fieldset>
+                        <legend>Attendance method (required)</legend>
+
+                        <label class="choice">
+                            <input
+                                type="radio"
+                                name="attendance_method"
+                                value="in-person"
+                                required
+                            >
+                            In person
+                        </label>
+
+                        <label class="choice">
+                            <input
+                                type="radio"
+                                name="attendance_method"
+                                value="virtual"
+                            >
+                            Virtual
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Telepathic Race: Secrets Of The Ten Spiritual Vibrations - Book Familiarity (optional)</legend>
+
+                        <label class="choice">
+                            <input
+                                type="radio"
+                                name="read_book"
+                                value="yes"
+                            >
+                            Yes, I have read the book
+                        </label>
+
+                        <label class="choice">
+                            <input
+                                type="radio"
+                                name="read_book"
+                                value="partly"
+                            >
+                            I have read part of the book
+                        </label>
+
+                        <label class="choice">
+                            <input
+                                type="radio"
+                                name="read_book"
+                                value="no"
+                            >
+                            No, I have not read the book
+                        </label>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="attendee-count">
+                            Number of attendees (required)
+                        </label>
+
+                        <p class="help" id="attendee-count-help">
+                            You may request between 1 and 4 seats.
+                        </p>
+
+                        <input
+                            id="attendee-count"
+                            name="attendee_count"
+                            type="number"
+                            min="1"
+                            max="4"
+                            step="1"
+                            required
+                            aria-describedby="attendee-count-help"
+                        >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>F3 · Requests and Agreement</legend>
+
+                    <div class="field">
+                        <label for="accommodation-request">
+                            Accessibility/accommodation request (optional)
+                        </label>
+
+                        <p class="help" id="accommodation-help">
+                            Describe any access support you would like us to
+                            provide. Do not include medical diagnoses or other
+                            sensitive health information. Maximum 300 characters.
+                        </p>
+
+                        <textarea
+                            id="accommodation-request"
+                            name="accommodation_request"
+                            maxlength="300"
+                            aria-describedby="accommodation-help"
+                        ></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label class="choice">
+                            <input
+                                type="checkbox"
+                                name="agree_terms"
+                                value="yes"
+                                required
+                            >
+                            I agree to follow the workshop participation
+                            guidelines. (required)
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">
+                    Submit workshop registration
+                </button>
+            </form>
+             <p class="form-notice">
+                    This is a demonstration form for an
+                    educational project. Submitting the
+                    form does not create a registration
+                    or send information to a server.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Telepathic Race</p>
+        </footer>
+    </body>
+</html>
