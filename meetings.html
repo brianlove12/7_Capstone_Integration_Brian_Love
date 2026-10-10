@@ -93,7 +93,7 @@
                     real personal or sensitive information.
                 </p>
 
-                <form id="workshop-form" onsubmit="return false;">
+                <form id="workshop-form" onsubmit="event.preventDefault();">
                 <fieldset>
                     <legend>F3 · Contact Information</legend>
 
@@ -305,6 +305,11 @@
                 <button type="submit">
                     Submit workshop registration
                 </button>
+                <p id="form-feedback" role="status" hidden>
+                    Demo completed successfully. This is an
+                    educational prototype. No registration
+                    was submitted or stored.
+                </p>
             </form>
              <p class="form-notice">
                     This is a demonstration form for an

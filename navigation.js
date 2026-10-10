@@ -33,3 +33,15 @@ document.addEventListener("keydown", (event) => {
 });
 
 // Add a comment above every logical step explaining what it does and why it is needed.
+
+const workshopForm = document.querySelector("#workshop-form");
+const formFeedback = document.querySelector("#form-feedback");
+
+if (workshopForm && formFeedback) {
+    workshopForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        formFeedback.hidden = false;
+    });
+}
+
