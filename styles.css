@@ -117,6 +117,7 @@ body {
 
 .menu-button {
     min-height: 2.75rem;
+    margin-top: 0.75rem;
     padding: .625rem 1rem;
     border: .125rem solid var(--paper);
     background: #0077b6;
